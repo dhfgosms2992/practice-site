@@ -1,0 +1,97 @@
+/* reset */
+
+* {
+    margin:0;
+    padding:0;
+}
+
+a {
+    color:black;
+    text-decoration: none;
+}
+
+ul {
+    /* unorder-list 를 지우는 속성 */
+    list-style-type: none;
+}
+
+/* container */
+
+.container {
+    width: 1200px;
+    height: 900px;
+    margin: 0 auto;
+    border: 1px dashed orange;
+}
+
+header nav  {
+    width: 100%;
+    height: 60px;
+    text-align: center;
+    /* 부모요소로 absolute 상속 */
+    position: relative;
+    
+}
+
+header nav .mainmenu {
+    /* line-height 줄간격 */
+    line-height: 60px;
+    position: absolute;
+    top:0;
+    left: 7%;
+    
+    
+    
+}
+
+header nav .mainmenu > li {
+    /* > 선택자 바로 밑에있는 자식선택자 */
+    float:left;
+    /*  animation 작동 */
+    transition: all 0.4s;
+    
+    
+}
+
+
+
+header nav .mainmenu > li  a {
+    /* 
+    a 태그는 inline 요소기때문에 넓이 폭이 지정이 안되기때문에  
+    width 값과 height 값을 주기위해서 line 요소인 block 요소로 교체
+    */
+    display: inline-block;
+    width: 250px;
+    height: auto;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    
+}
+
+header nav  .submenu  li:hover > a  {
+    font-weight: bold;
+    color:white;
+    cursor: pointer;
+}
+
+
+/* hover */
+
+header nav .mainmenu > li:hover{background-color: darkcyan;}
+header nav .mainmenu > li:hover > a {color:white;}
+
+
+/* submenu 클래스 안에있는 컨텐츠를 안보이게 하기위해서 display:none 적용 */
+header nav .submenu {display:none;}
+
+/* submenu 클래스 안에있는 안보였던 컨텐츠를  display:block 으로 hover 시 보이게 작동 */
+header nav .mainmenu li:hover .submenu {
+    display: block;
+}
+
+
+
+
+
+
+
