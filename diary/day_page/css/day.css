@@ -1,5 +1,9 @@
 /* reset */
-* {margin:0; padding:0;}
+* {
+    margin:0; padding:0;
+    box-sizing: border-box;
+}
+
 a {
     text-decoration: none;
     color:black;
@@ -34,6 +38,8 @@ a {
 .wrap .info_page .text-page p {
     padding:4px;
     line-height: 25px;
+    font-family: 'Nanum Pen Script', cursive;
+    font-size: 20px;
     
     
 }
