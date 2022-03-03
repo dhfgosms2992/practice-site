@@ -80,3 +80,156 @@ a {
     height: 100%;
     border-radius: 20px;
 }
+
+
+.wrap .info_page .toDoList {
+    width: 90%;
+    height: 100%;
+    margin-top: 10px;
+}
+
+.wrap .info_page .toDoList h2 {
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 30px;
+}
+
+
+.wrap .info_page .toDoList .toDo  {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+/* input 스타일 */
+.wrap .info_page .toDoList .toDo input {
+    display:none;
+}
+
+input#study + label {
+    cursor: pointer;
+    position: absolute;
+    left:10px;
+    top:10px;
+}
+
+input#study + label:before {
+    
+    content: "";
+    display: inline-block;
+    width: 17px;
+    height: 17px;
+    line-height: 17px;
+    border: 1px solid #cbcbcb;
+    background-color: white;
+    /* 체크 전과 후 높이 차이 설정 */
+    vertical-align: middle;
+
+}
+
+
+
+
+
+input#study:checked + label:before{
+    content:"\f00c";/*폰트어썸 유니코드*/
+    font-family:"Font Awesome 5 free"; /*폰트어썸 아이콘 사용*/
+    font-weight:900;/*폰트어썸 설정*/
+    color:#fff;
+    background-color:red;
+    border-color:#000;
+    font-size:13px;
+    text-align:center;
+    }
+
+/* read */
+
+    input#read + label {
+        cursor: pointer;
+        position: absolute;
+        left:10px;
+        top:10px;
+    }
+
+
+
+    input#read + label:before {
+    
+        content: "";
+        display: inline-block;
+        width: 17px;
+        height: 17px;
+        line-height: 17px;
+        border: 1px solid #cbcbcb;
+        background-color: white;
+        /* 체크 전과 후 높이 차이 설정 */
+        vertical-align: middle;
+    
+    }
+    
+    
+    input#read:checked + label:before{
+        content:"\f00c";/*폰트어썸 유니코드*/
+        font-family:"Font Awesome 5 free"; /*폰트어썸 아이콘 사용*/
+        font-weight:900;/*폰트어썸 설정*/
+        color:#fff;
+        background-color:red;
+        border-color:#000;
+        font-size:13px;
+        text-align:center;
+        }
+    
+/* exercise */
+
+input#exercise + label {
+    cursor: pointer;
+    position: absolute;
+    left:10px;
+    top:10px;
+}
+
+
+
+input#exercise + label:before {
+
+    content: "";
+    display: inline-block;
+    width: 17px;
+    height: 17px;
+    line-height: 17px;
+    border: 1px solid #cbcbcb;
+    background-color: white;
+    /* 체크 전과 후 높이 차이 설정 */
+    vertical-align: middle;
+
+}
+
+
+input#exercise:checked + label:before{
+    content:"\f00c";/*폰트어썸 유니코드*/
+    font-family:"Font Awesome 5 free"; /*폰트어썸 아이콘 사용*/
+    font-weight:900;/*폰트어썸 설정*/
+    color:#fff;
+    background-color:red;
+    border-color:#000;
+    font-size:13px;
+    text-align:center;
+    }
+
+
+.wrap .info_page .toDoList .toDo div {
+    width: calc(95%/3);
+    margin:9px;
+    position: relative;
+}
+
+.wrap .info_page .toDoList .toDo div input {
+    position: absolute;
+    left:10px;
+    top:10px;
+}
+
+.wrap .info_page .toDoList .toDo div img {
+    width: 100%;
+}
