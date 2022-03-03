@@ -40,8 +40,17 @@ a {
     line-height: 25px;
     font-family: 'Nanum Pen Script', cursive;
     font-size: 19px;
-    
-    
+}
+
+
+.wrap .info_page .text-page p a {
+    color:red;
+}
+
+
+.wrap .info_page .text-page p a:hover {
+    color: cornflowerblue;
+    border-bottom: 1px solid cornflowerblue;
 }
 
 .wrap .info_page .text-page button {
