@@ -30,6 +30,20 @@
      overflow: hidden;
      border-radius: 10px;
  }
+
+ .diary-list .diary-box  p {
+     font-weight: bold;
+ }
+
+
+ .diary-list .diary-box  p.no{
+    color: red;
+ }
+
+
+ .diary-list .diary-box p.black {
+     color:black;
+ }
      
  .diary-list .diary-box .img-box {
    width: 90%;
