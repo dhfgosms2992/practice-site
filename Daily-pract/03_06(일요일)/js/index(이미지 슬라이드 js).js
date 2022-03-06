@@ -121,6 +121,7 @@ $(function(){
         // 1) 맨 오른쪽 이미지 슬라이드가 맨 왼쪽으로 이동
         currentPosition -= slidewidth
         list.css({left : currentPosition})
+        
         $('.slide-item:last-child').prependTo(list)
 
         // 2) 슬라이드 전체가 ◀ button 클릭시 오른쪽으로 슬라이드 구동 1초당
@@ -143,7 +144,7 @@ $(function(){
             // let slideCount = item.length // 슬라이드 개수 변수 length
             currentNo = slideCount
         } else {
-            currentNo -- 
+            currentNo --
         }
 
         // let currentIndex = 0
@@ -163,7 +164,8 @@ $(function(){
         // 1) 맨 오른쪽 이미지 슬라이드가 맨 왼쪽으로 이동
         currentPosition += slidewidth
         list.css({left : currentPosition})
-        $('.slide-item:last-child').prependTo(list)
+        // error appendTo(list) 를 PrependTo(list) 표기
+        $('.slide-item:first-child').appendTo(list)
 
         // 2) 슬라이드 전체가 ▶  button 클릭시 왼쪽으로 슬라이드 구동 1초당
         currentPosition -= slidewidth
@@ -190,7 +192,7 @@ $(function(){
         }
 
         // let currentIndex = 0
-        currentIndex = 0
+        currentIndex = currentNo -1
 
          //  클릭한 dot 위치 표시 ○ = active 시 -> ●
         $('.dot').removeClass('active')
@@ -217,6 +219,7 @@ $(function(){
         // 음수방향 ◀ (왼쪽)
         if (gap < 0){
             currentPosition -= (slidewidth*absGap)
+            list.css({left:currentPosition})
 
             for (let i =0; i < absGap; i++){
                 $('.slide-item:last-child').prependTo(list)
@@ -230,9 +233,10 @@ $(function(){
         // 양수방향 ▶ (오른쪽)
         if (gap > 0){
             currentPosition += (slidewidth*absGap)
+            list.css({left: currentPosition})
 
             for (let i =0; i < absGap; i++){
-                $('.slide-item:last-child').prependTo(list)
+                $('.slide-item:first-child').appendTo(list)
             }
 
             currentPosition -= (slidewidth*absGap)
