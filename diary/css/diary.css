@@ -22,6 +22,9 @@
     flex-wrap: wrap;
  }
 
+
+ 
+
  .diary-list .diary-box {
      width: calc(90%/7);
      height: 400px;
@@ -78,6 +81,12 @@
      margin: 0 auto;
      position: relative;
      
+ }
+
+
+ .diary-list .diary-box .diary_info.no h2 {
+    color:red;
+    
  }
  
  .diary-box .diary_info button {
