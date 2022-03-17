@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>드롭다운 메뉴 만들기</title>
+</head>
+<style>
+
+    *{
+        margin:0;
+        padding:0;
+        text-decoration: none;
+        list-style-type: none;
+        text-transform: capitalize;
+        color:black;
+    }   
+
+    :root {
+        --container-color : #ddd;
+    }
+
+    .container{
+        width: 1200px;
+        height: auto;
+        background-color: var(--container-color);
+        margin: 50px auto;
+    }
+
+   header nav.drop-down {
+        width: 100%;
+        height: 50px;
+        line-height: 50px;
+        
+    }
+
+    header nav ul li {
+        margin: 0 auto;
+        float:left;
+        width: 299px;
+        
+    }
+
+    header nav ul li a {
+        display: inline-block;
+        width: 100%;
+        text-align: center;
+        
+    }
+
+
+    header nav ul li:hover a.mainMenu_GNB {
+        background-color: aqua;
+        color:white;
+        font-weight: bold;
+    }
+
+
+    header nav ul li .subMenu li:hover a    {
+        color:white;
+        border-bottom: 1px solid aqua ;
+        
+    }
+
+
+    /* 애니메이션 효과 */
+    header nav ul li .subMenu {
+        height: 0px;
+        overflow: hidden;
+        transition: all 0.5s;
+        border: 1px solid red;
+        background-color: #ddd;
+    }
+
+   
+    /* 한 섹션당 열리는 슬라이드 구동 */
+    /* header nav ul li:hover .subMenu {
+        display: block;
+        height: 200px;
+        transition: all 0.5s;
+    } */
+
+    /* 전체 슬라이드 열리는 방식 */
+    header nav ul:hover .subMenu {
+        display: block;
+        height: 200px;
+        transition: all 0.5s;
+    }
+
+    
+</style>
+<body>
+    <div class="container">
+        <header>
+            <nav class="drop-down">
+                <ul class="mainMenu">
+                    <li><a href="https://www.naver.com" class="mainMenu_GNB">menu1</a>
+                        <ul class="subMenu">
+                            <li><a href="https://www.naver.com">1</a></li>
+                            <li><a href="">2</a></li>
+                            <li><a href="">3</a></li>
+                            <li><a href="">4</a></li>
+                        </ul>
+                    </li>
+               
+
+               
+                    <li><a href="" class="mainMenu_GNB">menu2</a>
+                        <ul class="subMenu">
+                            <li><a href="">1</a></li>
+                            <li><a href="">2</a></li>
+                            <li><a href="">3</a></li>
+                            <li><a href="">4</a></li>
+                        </ul>
+                    </li>
+               
+
+             
+                    <li><a href="" class="mainMenu_GNB">menu3</a>
+                        <ul class="subMenu">
+                            <li><a href="">1</a></li>
+                            <li><a href="">2</a></li>
+                            <li><a href="">3</a></li>
+                            <li><a href="">4</a></li>
+                        </ul>
+                    </li>
+               
+
+             
+                    <li><a href="" class="mainMenu_GNB">menu4</a>
+                        <ul class="subMenu">
+                            <li><a href="">1</a></li>
+                            <li><a href="">2</a></li>
+                            <li><a href="">3</a></li>
+                            <li><a href="">4</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+</body>
+</html>
