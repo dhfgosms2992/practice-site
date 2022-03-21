@@ -109,6 +109,15 @@ a {
 .wrap .info_page .toDoList .toDo  {
     display: flex;
     flex-wrap: wrap;
+    
+}
+
+
+.wrap .info_page .toDoList .toDo {
+    
+    margin:30px auto;
+    width: 1200px;
+    /* border: 1px solid red; */
 }
 
 
