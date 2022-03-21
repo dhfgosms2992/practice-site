@@ -1,0 +1,252 @@
+
+/* reset */
+input {
+    outline: none;
+    border: none;
+    background-color: transparent;
+}
+
+a {
+    text-decoration: none;
+    color:#000;
+    text-align: center;
+}
+
+
+/* 외부 폰트 파일로 적용하는법 */
+/* font-family 에서 임의로 값을 지정해서 */
+/*  font-family: "delivery"; 이런식으로 지정 */
+@font-face {
+    src: url(../fonts/BMJUA_ttf.ttf);
+    font-family: "delivery";
+}
+
+
+*{
+    margin:0;
+    padding:0;
+    font-family: "delivery";
+}
+
+/* 전체 영역 container */
+
+.container {
+    width: 100%;
+    height: 100vh;
+    background: 
+    radial-gradient(circle at 50% 0, rgba(255,0,0, 0.5), rgba(255,0,0,0) 70.71%),
+    radial-gradient(circle at 6.7% 75%, rgba(0,0,255, 0.5), rgba(0,0,255,0) 70.71%),
+    radial-gradient(circle at 93.3% 75%, rgba(0,255,0, 0.5), rgba(0,255,0,0) 70.71%)
+}   
+
+/* 로그인 영역 */
+
+.login-wrap {
+    position: absolute;
+    /* 가운데 정렬 */
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    /* border: 1px solid red; */
+    width: 350px;
+    height: 550px; 
+    /* box-sizing 페딩 때문애 */
+    box-sizing: border-box;
+    padding:30px;
+    background-color: #fff;
+    border: 0.2px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.4)
+        /* box-shadow: x y blur color */
+}
+
+/* inner */
+#login {
+    position: relative;
+    width: 80%;
+    position: absolute;
+    top: 50px;
+    left: 32px;
+    height: 400px;
+    overflow: hidden;
+    /* border: 1px solid red; */
+}
+
+#login .login-logo {
+    position: absolute;
+    top:10px;
+    right:5px;
+    width: 50px;
+    height: 50px;
+    /* border:1px solid red; */
+    
+}
+
+#login  h2 {
+    line-height: 70px;
+    margin-top:5px;
+    margin-left: 5px;
+    color:palevioletred;
+}
+
+#login .login-logo img { 
+    
+    width: 100%;
+}
+
+#login .login-inputbox { 
+    box-sizing: border-box;
+    position: relative; 
+    padding:10px;
+    margin-bottom: 10px; 
+ 
+}
+
+#login .login-inputbox input { 
+    width: 100%;
+    height: 25px;
+    padding-left: 5px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    border-bottom: 1px solid #AAA;
+    /* border: 1px solid red; */
+}
+
+/* placeholder  스타일적용*/
+#login .login-inputbox input::placeholder {
+    color: palevioletred;
+}
+
+/* ~ 형제자매 관계에 있는 선택자 지정 */
+/* ID PASSWORD 클릭시 밑에 라인 만듬 */
+#login .login-inputbox input ~ .border { 
+    position: absolute;
+    top: 33px;
+    left: 10px;
+    width: 10px;
+    height: 0px;
+    border: 1px solid palevioletred;
+    background-color: palevioletred;
+}
+
+/* 입력상자에 마우스 커서 활성화 */
+/* ~ 형제자매 관계에 있는 선택자 지정 */
+/* input:focus 특정 이벤트에 애한 선택자 지정 */
+/* ID PASSWORD 클릭시 밑에 라인 을 에니메이션 화 transition: 0.5s;*/
+#login .login-inputbox input:focus ~ .border{
+    width: 93%;
+    transition: all 0.5s;
+    border: 1px solid palevioletred;
+    background-color: palevioletred;
+}
+
+
+/* 아이디저장/ 자동 로그인 */
+#login .login-remember {
+    position: relative;
+     height: 30px; 
+     margin-bottom: 15px; 
+     
+    }
+
+    #login .login-remember span p{
+        display: inline-block;
+        width: 70px;
+        height: 20px;
+        padding:1px;
+        box-sizing: border-box;
+        color:palevioletred;
+        /* border: 1px solid red; */
+    }
+
+    #login .login-remember span p.right-side_1 {
+        margin-right:20px;
+    }
+
+    #login .login-remember span p.right-side_2 {
+        margin-right:24px;
+    }
+
+
+    
+    
+
+label { position: relative; padding-left: 25px; color: #AAA; cursor: pointer; }
+
+#login .login-remember input[type="checkbox"]{
+    opacity: 0;
+    width: 0;
+    height: 0;
+    cursor: pointer;
+}
+
+/* -------------------------------------------------------------- */
+
+label .checkmark {
+    position: absolute;
+    top:-1px;
+    right:0;
+    width: 20px;
+    height: 20px;
+    background-color: #eee;
+    /* 잘모르겠으면 보더를 활성화 */
+    /* border: 1px solid red; */
+}
+
+/* --------------------------------------------------------- */
+
+/* .checkmark 커스텀 체크박스안에 있는 컨텐츠 가상클래스 after속성 */
+label .checkmark::after {
+    content: '';
+    position: absolute;
+    /* ????????????????? */
+    display: none;
+}
+
+/* ????????????????????????????????????????????? */
+label input[type='checkbox'] ~ .checkmark::after { display: block;}
+
+/* ----------------------------------------------------------------- */
+
+/* checkmark 안에 만든 커스텀 v 채크박스 모양 */
+label .checkmark::after {
+    left:7px;
+    top:3px;
+    width: 4px;
+    height: 8px;
+    border: solid white;
+    /* top right bottom left * */
+    border-width: 0 3px 3px 0; ;
+    transform: rotate(45deg);
+}
+
+/* 체크박스 체크시  .checkmark 백그라운드 적용  */
+label input[type="checkbox"]:checked ~ .checkmark {
+    background-color: palevioletred;
+}
+
+
+
+
+/* 버튼 */
+#login .login-btnbox { height: 50px; margin-bottom: 10px; }
+#login .login-btn { 
+    /* a 태그라서 인라인태그 */
+    width: 220px;
+    margin:0 auto;
+    display: block; 
+    background-color: palevioletred;
+    font-size: 1.2rem;
+    color: white;
+    line-height: 50px;
+    border-radius: 5px;
+}
+
+/* 버튼에 마우스 올렸을 때 - 밝기(90%) */
+#login .login-btn:hover { filter: brightness(90%) }
+
+/* 카피라이트 */
+#login .copyright { height: 15px; margin-top: 30px; margin-bottom: 10px; }
+#login .copyright p { 
+    font-size: 0.7rem; text-align: center; 
+}
